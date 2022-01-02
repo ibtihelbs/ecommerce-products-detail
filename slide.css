@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.item-thumbnail {
+  width: 50%;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+}
+.slide-icon {
+  display: none;
+}
+.item-thumbnail > * {
+  width: 80%;
+}
+.main-img-container {
+  width: 80%;
+  background-color: blue;
+  /*! top: 0; */
+  position: relative;
+}
+
+.main-img-container img {
+  width: 100%;
+  position: absolute;
+}
+.item-scroll img {
+  width: 24.24%;
+}

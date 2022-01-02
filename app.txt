@@ -1,0 +1,111 @@
+let menu=document.querySelector(".menu ul");
+let hamberger=document.querySelector("#menu");
+let close=document.getElementById("close");
+/**hundle menu */
+hamberger.addEventListener("click",(e)=>{
+    menu.classList.toggle("active");
+    
+})
+close.addEventListener("click",(e)=>{
+    menu.classList.remove("active");  
+})
+
+
+//Moving the images 
+let images=document.querySelector(".carousel-track");
+let img_slide=document.querySelectorAll(".img-slide");
+let img=document.querySelectorAll(".carousel-img");
+let img_thumbnail=document.querySelector(".item-scroll");
+let img_thumbnails=Array.from(img_thumbnail.children);
+
+//console.log(img,img_thumbnail);
+let slideWidth= img[0].getBoundingClientRect().width;
+img_slide.forEach((item,keys)=>{
+  item.style.left = slideWidth * keys + "px";
+})
+
+
+let previous=document.getElementById("previous");
+let next=document.getElementById("next");
+let slide_icons=document.querySelector(".slide-icon");
+
+let slideMoving=(current_slide,next_slide)=>{
+    const amount_toMove=next_slide.style.left;
+    images.style.transform = `translateX(-${amount_toMove})`;
+    current_slide.classList.remove("current-slide");
+    next_slide.classList.add("current-slide");
+}
+
+next.addEventListener("click",(e)=>{
+    const current_slide=images.querySelector(".current-slide");
+    const next_slide=current_slide.nextElementSibling;
+    slideMoving(current_slide,next_slide);
+    /*const amount_toMove=next_slide.style.left;
+    images.style.transform = `translateX(-${amount_toMove})`;
+    current_slide.classList.remove("current-slide");
+    next_slide.classList.add("current-slide");*/
+})
+previous.addEventListener("click",(e)=>{
+    const current_slide=images.querySelector(".current-slide");
+    console.log(current_slide);
+    const next_slide=current_slide.previousElementSibling;
+    slideMoving(current_slide,next_slide);
+    /** const amount_toMove=next_slide.style.left;
+    images.style.transform = `translateX(-${amount_toMove})`;
+    current_slide.classList.remove("current-slide");
+    next_slide.classList.add("current-slide"); */
+})
+img_thumbnail.addEventListener("click",(e)=>{
+    const currentThumbnail= e.target.closest('img');
+    if(!currentThumbnail)return;
+    
+    const thum=img_thumbnail.querySelector(".current-slide");
+    
+    const current_slide=images.querySelector(".current-slide");
+    //console.log(thum,current_slide);
+    thum.classList.remove("current-slide");
+    currentThumbnail.classList.add("current-slide");
+    const get_index=img_thumbnails.findIndex(it=>it===currentThumbnail);
+    //console.log(img_thumbnails,get_index);
+    images.style.transform = `translateX(-${slideWidth*get_index}px)`;
+    console.log(slideWidth*get_index);
+    current_slide.classList.remove("current-slide");
+    next_slide.classList.add("current-slide");
+})
+images.addEventListener("click",(e)=>{
+    document.querySelector(".modal").style.display = "block";
+})
+
+/*counting elements*/
+
+let span=document.querySelector("#item-count span");
+let Card_count=document.querySelector("#Card-count");
+span_innerHtml=0;
+
+document.getElementById("minus").addEventListener("click",(e)=>{
+    span.innerHTML=span.innerHTML-1;
+    //Card_count.value=span.innerHTML;
+    Card_count.setAttribute("value",span.innerHTML);
+    document.getElementById("item-counts").innerHTML=span.innerHTML;
+})
+document.getElementById("Plus").addEventListener("click",(e)=>{
+    console.log(typeof(span.innerHTML));
+    span.innerHTML=parseInt(span.innerHTML)+1;
+    let value=span.innerHTML;
+    //Card_count.value=span.innerHTML;
+    Card_count.setAttribute("value",span.innerHTML);
+    //console.log(span_innerHtml);
+    document.getElementById("item-counts").innerHTML=span.innerHTML;
+    
+   // document.getElementById("total-price").innerHTML=span.innerHTML*
+})
+span.innerHTML=span_innerHtml;
+
+//card-item
+
+let cardItem=document.querySelector(".card-item");
+
+Card_count.addEventListener("click",(e)=>{
+    e.preventDefault();
+    cardItem.classList.toggle("active-card");
+})

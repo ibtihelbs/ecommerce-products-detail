@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="slide.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="item-thumbnail">
+    <div class="main-img-container">
+      <div class="slide-icon">
+        <img id="previous" src="images/icon-previous.svg" alt="">
+        <img id="next" src="images/icon-next.svg" alt="">
+      </div>
+      <div class="main-img">
+        <img src="images/image-product-1.jpg" alt="">
+        <img src="images/image-product-2.jpg" alt="">
+        <img src="images/image-product-3.jpg" alt="">
+        <img src="images/image-product-4.jpg" alt="">
+      </div>  
+    </div>
+    <div class="item-scroll">
+      <img src="images/image-product-1-thumbnail.jpg" alt="">
+      <img src="images/image-product-2-thumbnail.jpg" alt="">
+      <img src="images/image-product-3-thumbnail.jpg" alt="">
+      <img src="images/image-product-4-thumbnail.jpg" alt="">
+    </div>
+  </div>
+  <script src="modal.js">
+    document.querySelectorAll(".main-img").addEventListener("click",(e)=>{
+    
+    document.querySelector(".modal").style.display = "block";
+})
+  </script>
+</body>
+</html>
