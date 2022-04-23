@@ -75,7 +75,7 @@ images.addEventListener("click",(e)=>{
     modal.style.display = "flex";
     modal.querySelector("#next").addEventListener("click",(f)=>{
           const get_index=(_images.findIndex(it=>it.innerHTML.includes(_attribute)==true))+1;
-          console.log(get_index);
+          console.log(get_index+"indx");
           _attribute=_attribute.replace(get_index,get_index+1);
           modal.querySelector(".carousel-img").setAttribute("src", _attribute);
     })
