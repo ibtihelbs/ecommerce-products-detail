@@ -362,6 +362,11 @@ button {
   height: 100%;
   overflow: visible;
 }
+@media (min-width: 800px) {
+  .carousel:hover{
+    cursor:zoom;
+  }
+}
 @media (max-width: 800px) {
   nav {
     padding-left: 0px;
