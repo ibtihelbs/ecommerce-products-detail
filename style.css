@@ -366,6 +366,7 @@ button {
   nav {
     padding-left: 0px;
   }
+  
   .menu-top {
     padding-left: 10px;
   }
@@ -406,6 +407,9 @@ button {
   main > * {
     width: 100% !important;
     height: 100% !important;
+  }
+  .carousel{
+  width: 100% !important;
   }
   .main-img-container {
     width: 100%;
