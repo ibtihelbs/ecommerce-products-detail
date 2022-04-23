@@ -69,18 +69,14 @@ img_thumbnail.addEventListener("click",(e)=>{
 images.addEventListener("click",(e)=>{
     let modal=document.querySelector(".modal");
     let img=e.target.closest("img");
-    //img.classList.remove("current-slide")getAttribute("src")img.getAttribute("src")
     let _attribute=img.getAttribute("src");
-    console.log(typeof(_attribute));
-    console.log(modal.querySelector(".carousel-img").src);
+    
     modal.querySelector(".carousel-img").setAttribute("src", _attribute);
     modal.style.display = "flex";
     modal.querySelector("#next").addEventListener("click",(f)=>{
-          console.log(_images);
           const get_index=(_images.findIndex(it=>it.innerHTML.includes(_attribute)==true))+1;
-          //console.log(get_index);
+          console.log(get_index);
           _attribute=_attribute.replace(get_index,get_index+1);
-          console.log(_attribute);
           modal.querySelector(".carousel-img").setAttribute("src", _attribute);
     })
     
