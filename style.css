@@ -362,7 +362,7 @@ button {
   height: 100%;
   overflow: visible;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   nav {
     padding-left: 0px;
   }
