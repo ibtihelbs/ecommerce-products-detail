@@ -22,7 +22,7 @@ let img_thumbnail=document.querySelector(".item-scroll");
 let img_thumbnails=Array.from(img_thumbnail.children);
 
 //console.log(img,img_thumbnail);
-let slideWidth= img[0].getBoundingClientRect().width+5;
+let slideWidth= img[0].getBoundingClientRect().width+200;
 console.log(slideWidth);
 img_slide.forEach((item,keys)=>{
   item.style.left = slideWidth * keys+ "px";
