@@ -71,7 +71,7 @@ images.addEventListener("click",(e)=>{
     let img=e.target.closest("img");
     let _attribute=img.getAttribute("src");
     let get_index=0;
-    console.log(get_index+"indx");
+    
 
     modal.querySelector(".carousel-img").setAttribute("src", _attribute);
     modal.style.display = "flex";
@@ -86,12 +86,15 @@ images.addEventListener("click",(e)=>{
         const get_index=(_images.findIndex(it=>it.innerHTML.includes(_attribute)==true))+1;
         //console.log(get_index);
         _attribute=_attribute.replace(get_index,get_index-1);
-        if(get_index==_images.length){
+        if(get_index==_images.length-1){
             console.log(get_index);
             modal.querySelector("#previous").display="none";
         }
         modal.querySelector(".carousel-img").setAttribute("src", _attribute);
   })
+    if(get_index==0){
+       modal.querySelector("#next").display="none" 
+    }
   let item_img_thumbnails=modal.querySelectorAll(".item-scroll img");
    item_img_thumbnails.forEach((item,index)=>{
        item.addEventListener("click",(f)=>{
