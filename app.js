@@ -90,6 +90,7 @@ images.addEventListener("click",(e)=>{
         //console.log(get_index);
         _attribute=_attribute.replace(get_index,get_index-1);
         if(get_index==0){
+            console.log(get_index);
             modal.querySelector("#previous").display="none";
         }
         modal.querySelector(".carousel-img").setAttribute("src", _attribute);
