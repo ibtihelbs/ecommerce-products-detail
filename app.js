@@ -70,7 +70,7 @@ images.addEventListener("click",(e)=>{
     let modal=document.querySelector(".modal");
     let img=e.target.closest("img");
     let _attribute=img.getAttribute("src");
-    const get_index=0;
+    let get_index=0;
     console.log(get_index+"indx");
 
     modal.querySelector(".carousel-img").setAttribute("src", _attribute);
